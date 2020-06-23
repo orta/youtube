@@ -34,11 +34,16 @@ There are a few key differences from before git:
   
 ### Competitors
 
-seriously, 2004-2006 was the period to start a DVCS
+seriously, 2004-2006 was the period to start a DVCS.
 
 - https://www.mercurial-scm.org (2005)
 - https://fossil-scm.org/home (2006)
 - bazaar (2004)
+
+At the time the majority of OSS work was using BitKeeper, a closed-source VCS grudgingly.
+BitKeeper was a 
+
+
 
 Hard to differentiate between them TBH:
 
@@ -61,6 +66,28 @@ git push
 ```
 
 So, realistically, git won because GitHub won! hah
+
+### Generations of VCS
+
+- Stage 1: files on disk (SCSS, RCS) - fast but dumb
+- Stage 2: central servers (CVS, SVN, Perforce) - smart but slow
+ - CVS = you pull some files and push each one by one
+ - SBV = chunk changes into a diff, and a diff could pass/fail being merged
+- Stage 2.5:you have the files, but not quite smart enough 
+ - Bitkeeper (files not changesets)
+ - DARCs (first chunks)
+ - Monotone (DAG with sha with SQLite as a db)
+- Stage 3: duped files on disks stored in servers (BitKeeper, git, hg, fossil, bzr) - fast and smart
+
+### Git Evo
+
+- git submodules
+- git lfs - https://git-lfs.github.com
+- `git switch` and `git restore` - https://www.infoq.com/news/2019/08/git-2-23-switch-restore/
+- shallow clone
+- git subtree
+
+maybe not worth the section? 
 
 ### Reference 
 
