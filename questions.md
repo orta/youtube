@@ -15,9 +15,11 @@
 
 - How quickly was it adopted
 - Were there key moments of adoption?
+- Did it win? Why
 
 ### Evolution
 
+- Did ownership change?
 - How did it evolve?
 
 ### Today
