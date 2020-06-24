@@ -43,6 +43,10 @@ seriously, 2004-2006 was the period to start a DVCS.
 At the time the majority of OSS work was using BitKeeper, a closed-source VCS grudgingly.
 BitKeeper was a 
 
+> February of 2002, Linux creator Linus Torvalds decided that BitKeeper was "the best tool for the job" 
+and started using it to manage the mainline kernel, 
+
+https://web.archive.org/web/20120523134437/http://kerneltrap.org/node/4966
 
 
 Hard to differentiate between them TBH:
