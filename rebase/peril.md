@@ -1,12 +1,14 @@
 ### intro
 
 I'm Orta Therox, a developer/designer working on the TypeScript team.
+ 
+In the Apple developer ecosystem, there's a term called "Sherlocking" - it's used when a platform vendor (like Apple) re-implements an idea which previously was an indie app. 
 
-In the Apple developer ecosystem, there's a term called "Sherlocking" - it's used when a platform vendor (like Apple) re-implements an idea which previously was an indie app. The titular example came from when Apple took all of the ideas from an indie app by Karelia software called "Watson" into an upgrade of their app "Sherlock". It's wild, Apple gave Watson an award for best innovation in 2002, then in 2003 an update to Sherlock made it basically a carbon copy. In those situations, you really don't have much choice in the matter.
+The titular example came from when Apple took all of the ideas from an indie app by Karelia software called "Watson" into an upgrade of their app "Sherlock". It's wild, Apple gave Watson an award for best innovation in 2002, then in 2003 an update to Sherlock made it basically a carbon copy. In those situations, you really don't have much choice in the matter.
 
-I've been sherlocked twice in my OSS career two big open source projects, on projects I've devoted years to, this is the story of the second one.
+I've been sherlocked twice in my OSS career two big open source projects, on projects I've devoted years to, this is the story of the second one. Which starts right after the first.
 
-How GitHub sherlocked Peril.
+This is a Rebase on How GitHub sherlocked Peril.
 
 ---- title card ----
 
@@ -38,11 +40,12 @@ For example, can we write cultural rules like:
 
 - All markdown files should have a spellcheck applied
 - Any repo which has a CHANGELOG file, should request a changelog entry
-- If someone says "Merge on green" in a comment, then the PR should self merge
 
-Wait what?!
+This is what Peril is, it's cultural automation at the entire org layer. I used serverless functions to run the rules in sandboxed environments and they'd typically be done within a second.
 
-Yeah, it turned out that building a generic system for handling cultural norms also turned out to be really good at automation at larger scale. 
+At Artsy we explored a few cultural rules, and someone asked if we could build a "Merge on Green" feature into GitHub with it. 
+
+Yeah, it turned out that building a generic system for handling cultural norms also turned out to be really good at automation at larger scale.
 
 [split]
 
@@ -95,11 +98,15 @@ export default async (issueWebhook: Issues) => {
 }
 ```
 
-This meant that for any repo in the organization, if someone created a new issue which was just the issue template then the issue would automatically be closed.
+This meant that for any repo in the organization, if someone created a new issue which just contained the issue template then the issue would automatically be closed.
 
-That was Peril in a nutshell. One of the cool parts of this technique was the JavaScript files lived in a separate repo, meaning I didn't have to worry about security issues like a Pull Request changing the JavaScript to leak secrets. Score.
+That is Peril in a nutshell. One of the cool parts of this technique was the JavaScript files lived in a separate repo, meaning I didn't have to worry about security issues like a Pull Request changing the JavaScript to leak secrets. Score.
 
-I started exploring hosting Peril myself as a service. I even had early-stage VCs, who you've probably heard of, reach out on the chance that I wanted to take funding for Peril as a company. I started building out peril as a service, and as I started to get close - I got an email about a meeting with some GitHub engineers who had been working on a new, big, project and they wanted me to test the alpha.
+We used Peril in Artsy for a while, and people started self-hosting their own versions. I got a few requests for having a centralized Peril server which anyone could sign up for, and so I started exploring hosting Peril myself as a service. 
+
+Peril as a Service would be like having access to a very fast and testable  
+
+I even had early-stage VCs, who you've probably heard of, reach out on the chance that I wanted to take funding for Peril as a company. I started building out peril as a service, and as I started to get close - I got an email about a meeting with some GitHub engineers who had been working on a new, big, project and they wanted me to test the alpha.
 
 This turned out to be GitHub Actions, and it's not fair on the GitHub team to say they copied Peril which had been used in a few large JS teams at this point - we both were looking at the same problem domain and felt that a JS automation system based on the GitHub webhook system is an massive un-explored surface. It still is.
 
