@@ -12,9 +12,11 @@ Working on a software project is always about treading a balance between two maj
 
 Software can grow eternally as a program grows to fully explore the design space for it's original goals, and that design space can expand as you see new horizons. 
 
-For example, it's pretty unlikely that someone imagined emoji support when arguing about how to build ASCII. Or, I doubt Linus was thinking about the ubiquity of android smart phones when Linux was starting to rattle around in his head or that people would be running virtual apps inside virtual servers in containerized data-centers running under the sea. As the scope of the project changed, so did the expectations of features inside the kernel.
+For example, I doubt Linus was thinking about the ubiquity of android smart phones when Linux was starting to rattle around in his head and that the same project would be powering virtual apps inside virtual servers in containerized data-centers running under the sea. 
 
+This trade-off can make figuring out what abstraction level you want to be working at a real struggle because you often want to be working a the highest level of abstraction possible - but the more layers of indirection you use, the more space there is for things to change without your influence.
 
+That to me is one of the core idea when thinking about code-rot: at what point, does every abstraction you use, stop paying for itself.
 
 #### Environment Changes
 
@@ -29,3 +31,4 @@ I've spent 6 months working on a feature used
 
 - https://news.microsoft.com/features/under-the-sea-microsoft-tests-a-datacenter-thats-quick-to-deploy-could-provide-internet-connectivity-for-years/
 - https://begriffs.com/posts/2020-08-31-portable-stable-software.html
+
