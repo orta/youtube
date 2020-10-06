@@ -14,7 +14,7 @@ This tweet could have the exact same idea but re-written as "If you're a junior 
 
 The thing that made this viral is the responses from others dog-piling, and that I think people who did reply to this tweet should probably be looking at themselves and wondering "why did I put this in-front of my followers?" - in dog-piling, and directly responding, was I helping? Especially when _oshell made it pretty obvious they considered it a mistake tweet in their replies which show up first.
 
-Twitter doesn't have an edit button, or a way to annotate a tweet as a mistake and the people who amplified this bad tweet did just that - they amplified it. Amplifiying the tweet gave the author a whole new set of followers too by the way, probably not the set of followers they want, but the numbers went up and so does the incentive to do it again.
+Twitter doesn't have an edit button, or a way to annotate a tweet as a mistake and the people who amplified this bad tweet did just that - they amplified it. Amplifiying the tweet gave the author a whole new set of followers too by the way, probably not the set of followers they want, but the numbers went up considerably and so does the incentive for them and others to do it again.
 
 People who are exploring the medium of twitter will always make mistakes, but I think the folks with more than a thousand followers should think about their responsibility in dog-piling on bad takes. So here's my advice for these cases:
 
