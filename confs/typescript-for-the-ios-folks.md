@@ -1,4 +1,4 @@
-For NSSpain 2020
+For NSSpain 2020 /
 
 ## Intro
 
@@ -151,10 +151,10 @@ implementation GHDAppDelegate
 end
 ```
 
-The language had features to drop prefixes, used indentation instead of curly braces and always used dot notation. 
+The language had features to drop prefixes, used indentation instead of curly braces and always used dot notation.
 It wasn't a drastic re-write, but it would be pretty trivial to port any Objective-C to Eero.
 
-This process was the route that TypeScript made: TypeScript is JS but with the JS. 
+This process was the route that TypeScript made: TypeScript is JS but with the JS.
 
 To understand this we need to cover the idea of "expression space" and "type space" - you do this in your head already to write code, but I want to make it explicit.
 
@@ -181,30 +181,27 @@ Next we'll look at the type space. Again, a simplification. But you can think of
 TypeScript aims to only add code in the type space.
 
 ```js
-
-
-
-function greeting(person        )        {
-    return "Hello again, " + person.name + "!"
+function greeting(person) {
+  return "Hello again, " + person.name + "!";
 }
 
-let person = { name: "Danger" }
-let msg = greeting(person)
-console.log(msg)
+let person = { name: "Danger" };
+let msg = greeting(person);
+console.log(msg);
 ```
 
 ```ts
 interface Person {
-  name: string
+  name: string;
 }
 
 function greeting(person: Person): string {
-    return "Hello again, " + person.name + "!"
+  return "Hello again, " + person.name + "!";
 }
 
-let person = { name: "Danger" }
-let msg = greeting(person)
-console.log(msg)
+let person = { name: "Danger" };
+let msg = greeting(person);
+console.log(msg);
 ```
 
 This is the key goal of TypeScript, don't add cool new expression features to JavaScript, make it character to character the same but also allow for this new type space where you can design the connections between your objects.
@@ -216,21 +213,129 @@ TypeScript has none of that, you're writing JavaScript and you're also adding ty
 I'm almost done here but I need to repeat this point above. Because TypeScript aims to be "types only" TypeScript _cannot_ add new syntax outside of the type space. Basically these positions in the source code:
 
 ```ts
-interface XY {
+interface XY {}
 
-}
+type ZX = {};
 
-type ZX = {
+const a: thing = "123" as string;
 
-}
+function abc(name: string): number {}
+```
 
-const a: thing = "123" as string
+Because of that... You're going to see some really odd looking features in this language. So, lets go in escalating levels of 'Huh?'
 
-function abc(name: string): number {
+## JSDoc
 
+Let's start with the fact that around 70% of the features in TypeScript have the ability to be defined in a comment.
+
+You'll have seen code like this:
+
+```swift
+/// Creates an `AuthenticationInterceptor` instance from the specified parameters.
+///
+/// - Parameters:
+///   - authenticator: The `Authenticator` type.
+///   - credential:    The `Credential` if it exists. `nil` by default.
+///   - refreshWindow: The `RefreshWindow` used to identify excessive refresh calls. `RefreshWindow()` by default.
+function createAuth(authenticator: AuthenticatorType,
+            credential: Credential? = nil,
+            refreshWindow: RefreshWindow? = RefreshWindow()) -> AuthenticationInterceptor {
+    return AuthenticationInterceptor(credential, refreshWindow)
 }
 ```
 
-Because of that... You're going to see some really odd looking features.
+I based this same on the Alamofire source code, it's documenting a function and providing addition info on the parameters. 
+In TypeScript, you could do something like:
 
-Finally, before we start the deep dive I think 
+```swift
+/// Creates an `AuthenticationInterceptor` instance from the specified parameters.
+///
+/// - Parameters:
+///   - authenticator: {AuthenticatorType} The `Authenticator` type.
+///   - credential:    {Credential}        The `Credential` if it exists. `nil` by default.
+///   - refreshWindow: {RefreshWindow}     The `RefreshWindow` used to identify excessive refresh calls. `RefreshWindow()` by default.
+/// - Returns: {AuthenticationInterceptor}
+function createAuth(authenticator,
+            credential = nil,
+            refreshWindow = RefreshWindow()) {
+    return AuthenticationInterceptor(credential, refreshWindow)
+}
+```
+
+This takes all of the type definitions out of the code, and moves it entirely into the comments. Kinda wild that they both exist, infact this entire feature is basically one person's work on the team - he keeps finding ways creative ways to let people use JavaScript code without annotations.
+
+```ts
+/**
+ * Creates an `AuthenticationInterceptor` instance from the specified parameters.
+ * 
+ * @param {AuthenticatorType} authenticator The `Authenticator` type.
+ * @param {Credential} credential The `Authenticator` type.
+ * @param {RefreshWindow} refreshWindow The `Authenticator` type.
+ * @param {AuthenticationInterceptor}
+ */
+function createAuth(authenticator, 
+             credential = null, 
+             refreshWindow = new RefreshWindow()) {
+    return new AuthenticationInterceptor(credential, refreshWindow)
+}
+```
+
+Kinda cool.
+
+## Structural Types
+
+OK, let's talk about how you can assign objects. 
+
+```ts
+struct Resolution {
+    var width = 0
+    var height = 0
+}
+
+struct Rectangle {
+    var width = 0
+    var height = 0
+}
+
+var a = Resolution(width: 100, height: 200)
+var b = Rectangle(width: 100, height: 200)
+
+a = b
+b = a
+```
+
+Even though a `Resolution` and a `Rectangle` are the exact same shape - they are not interchangable without work. 
+This is called a nominal type system, basically what matters is the identifier - the name of the type, not actually what's inside it. I mean, a resolution and a rectangle have different contextual meaning right?
+
+```ts
+type Resolution = {
+    x: number
+    y: number
+}
+
+type Rectangle = {
+    x: number
+    y: number
+}
+
+let a: Resolution = { x: 100, y: 200 }
+let b: Rectangle = { x: 100, y: 200 }
+
+a = b
+b = a
+```
+
+Well TypeScript has to map existing code and existing code is pretty wild. 
+
+- Type Literals
+
+This is where
+
+```ts
+```
+
+
+- Unions
+- Mapped Types
+- Conditional Types
+- Template Literal Types
