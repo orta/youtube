@@ -1,6 +1,6 @@
-Hi, I'm Orta Therox - a developer/designer working on the TypeScript team at Microsoft. If you like these videos, you can sponsor my work on GitHub Sponsors. I'm a pretty active reader of twitter and an occasional writer, and have been thinking about deep dives into interesting trends I've seen lately.
+Hi, I'm Orta Therox - a developer/designer working on the TypeScript team at Microsoft. If you like these videos, you can sponsor my work on GitHub Sponsors. I'm a pretty active reader of twitter and an occasional writer, and saw another interesting event on the developer twitter which I couldn't get out of my head.
 
-My last video was about whether people should dog-pile on bad twitter takes, and I argued that most of the time quote-tweet dog piles don't really help anyone and mainly seem to be virtue signaling with a mix of making yourself feel better. 
+My last video was about whether people should dog-pile on bad twitter takes, and I argued that most of the time quote-tweet dog piles don't really help anyone and mainly seem to be virtue signaling with a mix of making yourself feel better briefly. 
 
 This week however, an interesting case-study just came up, of someone choosing to self-immolate on Twitter via their blog.
 
@@ -36,11 +36,15 @@ Writing an ignorant post doesn't always necessitate viral-ity, but being factual
 
 ### Religion
 
-All of his arguments in this post are backed up by his religious beliefs. Now, I'm an atheist, but my mother started a foodbank in a church, set up homeless shelters, built pay-what-you-can cafes and is now an ordained reverend. She's a church leader in one of Britain's biggest cities. I know what an empathetic Christian looks like. So do a lot of other people, republican's ain't it.
+All of his arguments in this post are backed up by his religious beliefs. Now, I'm an atheist, but my mother started a foodbank in a church, set up homeless shelters, built pay-what-you-can cafes and is now an ordained reverend. She knew the name of every homeless person we met when I walked through town with her last time. She's a church leader in one of Britain's biggest cities. I know what a Christian looks like.
 
-I think the developer sphere is generally pretty atheistic, but being outwardly religious in developer circles isn't asking for trouble. I work with folks who include their religion in their twitter bios, and there are high profile folks who treat their religion as an important part of their online identity. For example, Henry Zhu of Babel has a great podcast called Hope in Source on faith and open source, and Jon Reid of qualitycoding regularly interweaves spirituality with his conference talks.
+I think the developer sphere defaults to being atheistic, but being outwardly religious in developer circles isn't asking for trouble. I work with folks who include their religion in their twitter bios, and there are high profile folks who treat their religion as an important part of their online identity. For example, Henry Zhu of Babel has a great podcast called Hope in Source focused on faith and open source, and Jon Reid of qualitycoding regularly interweaves spirituality with his conference talks.
 
-Unlike the previous tweets we looked at: Jack has been writing on the internet for a long time and knew the game he was playing - he declared he would probably be cancelled at the start and end. I don't think these cases should be treated the same. There's a difference in someone making a one-off un-intended/misinformed tweet and someone consciously putting inflammatory material out there.
+Using religion as the focual point for your post is a tricky argument because so much of it is bound up in people's un-questionable beliefs in something which can't be proven. It's literally 'I believe X'. End of story. This shows in the lack of links and his questionable statements in the post.
+
+## Wrapup
+
+Unlike the previous tweets we looked at: Jack has been writing on the internet for a decade or so and knew the metagame he was playing - he declared he would probably be cancelled at the start and end. I don't think these cases should be treated the same. There's a difference in someone making a one-off un-intended/misinformed tweet and someone consciously putting inflammatory material out on the net.
 
 This makes it super disappointing when someone who looked like they were on the ball, publicly states their ignorance, and wraps it up in a religious bow.  So, who cancelled Jack McDade? Well, he did. Knowingly.
 
@@ -53,5 +57,3 @@ Any group has cultural norm, and generally speaking in tech you are assumed to b
 If you know that you're writing something which is certainly going to rile people up and goes against these norms, then your writing requires a lot more nuance and fact-checking ahead of time. 
 
 Making sure that you have linked sources, and can link to sources to help people understand how you came to these conclusions. In this post, Jack did none of that and I'm not particularly shocked by the outcome of his writing.
-
-I personally believe that Jack's write-up portrayed him as a fundamentalist christian who uses religious dogma to hide behind a voting for a bigot. There's a chance he's not racist, sexist or classist but by stating how he voted, he's saying those things are not blockers for him and that's disappointing.
